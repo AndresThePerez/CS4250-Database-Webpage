@@ -88,11 +88,11 @@
   :Description
 </li>
 <li>
-  <a href="www.google.com">Query 4</a>
+  <?php echo "<a href='query4.php' target='_blank'>Query 4</a>"; ?>
   :Description
 </li>
 <li>
-  <a href="www.google.com">Query 5</a>
+  <?php echo "<a href='query5.php' target='_blank'>Query 5</a>"; ?>
   :Description
 </li>
 </ol>
@@ -102,7 +102,7 @@
     Ad-Hoc Queries:
   </b>
 </p>
-<FORM METHOD=POST ACTION="">
+<form method="post" name="ad-hoc" action="ad-hoc-query.php">
    <table>
      <tr>
        <td align = right>
@@ -113,14 +113,14 @@
        </td>
      </tr>
      <tr>
-       <td align = right>
+       <td align=right>
           <input type=reset value="Clear">
        </td>
        <td>
-          <input type=submit value="Submit">
+          <input type="submit" value="submit" target="_blank">
        </td>
      </tr>
    </table>
-</FORM>
+</form>
   </body>
 </html>
