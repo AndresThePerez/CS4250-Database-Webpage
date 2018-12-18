@@ -20,18 +20,25 @@ $server = "hopper.csustan.edu";
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $query = $conn->prepare($ad_hoc_query);
         $query->execute();
+      
 
+        //Thanks to https://stackoverflow.com/questions/12413064/select-and-display-all-fields-from-mysql-table-for-indefinite-amount-of-columns
+        //for the reference
         echo "<table class='container'>";
-        for ($i = 0; $row = $query->fetch(); $i++) {
 
-            echo "<tr><td>" . $row[key($row)] . "</td>";
-            echo "<td>" . $row[key($row)] . "</td></tr>";
+            while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+
+                foreach($row as $value) {
+                    echo "<td>" . $value . "</td>";
+                }
+
+                echo "</tr>";
+
+            }
 
 
-
-        }
-
-        echo "</table>";
+                    echo "</table>";
 
     }
     catch(PDOException $e) {
