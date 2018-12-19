@@ -10,7 +10,7 @@ p {
   font-size: 30px;
 }
 
-table, td {
+table, th, td {
 	border: 1px solid black;
 	
 

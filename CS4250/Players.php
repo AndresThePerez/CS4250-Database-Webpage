@@ -36,7 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT * FROM Players");
         $query->execute();
 
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>Years Experience</th><th>Health Certificates</th><th>Position</th><th><NatIdNNum</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['yearsexperience'] . "</td>";
