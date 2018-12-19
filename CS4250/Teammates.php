@@ -29,14 +29,15 @@ $server = "hopper.csustan.edu";
 	try {
 
 
-		$conn = new PDO("mysql:hodst=$server;dbname=$database", $username, $password);
+		$conn = new PDO("mysql:host=$server;dbname=$database", $username, $password);
 
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $query = $conn->prepare("SELECT * FROM Teammates");
         $query->execute();
 
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>National Id Number</th><th>Wikipedia</th><th>Personal Email</th><th>Firstname</th><th>Lastname</th><th>Salary</th><th>Address</th><th>Phone Number</th><th>National Team Id</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['natidnum'] . "</td>";

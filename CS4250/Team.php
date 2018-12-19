@@ -36,7 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT * FROM Team");
         $query->execute();
 
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>National Team Id</th><th>Team Name</th><th>Phone Number</th><th>Busines Address</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['natteamid'] . "</td>";

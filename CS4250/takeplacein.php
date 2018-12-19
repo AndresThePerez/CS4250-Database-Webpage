@@ -29,14 +29,15 @@ $server = "hopper.csustan.edu";
 	try {
 
 
-		$conn = new PDO("mysql:hodst=$server;dbname=$database", $username, $password);
+		$conn = new PDO("mysql:host=$server;dbname=$database", $username, $password);
 
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $query = $conn->prepare("SELECT * FROM takeplacein");
         $query->execute();
 
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>National League Id</th><th>National Game Id</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['natleagueid'] . "</td>";
