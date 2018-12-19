@@ -36,8 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT AVG(t.salary) FROM Teammates t, Players p WHERE t.natidnum = p.natidnum AND p.position = 'striker'");
         $query->execute();
 
-        echo "<table class='container'>";
-        echo "<tr><td>Average Salary</td></tr>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>Average Salary</th></tr>";
       
         for ($i = 0; $row = $query->fetch(); $i++) {
          

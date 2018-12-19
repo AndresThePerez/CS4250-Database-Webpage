@@ -36,8 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT t.firstname, t.salary, p.position FROM Teammates t, Players p WHERE p.natidnum = t.natidnum AND t.salary > ANY (SELECT t2.salary FROM Teammates t2 WHERE t2.salary > 1000000)");
         $query->execute();
 
-        echo "<table class='container'>";
-        echo "<tr><td>Firstname</td><td>Salary</td><td>Position</td></tr>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>Firstname</th><th>Salary</th><tdhPosition</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['firstname'] . "</td>";

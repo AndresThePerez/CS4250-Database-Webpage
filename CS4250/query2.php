@@ -36,8 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT winningtname, stadium FROM Game WHERE Stadium LIKE 'AT&T%'");
         $query->execute();
 
-        echo "<table class='container'>";
-        echo "<tr><td>Firstname</td><td>Salary</td><td>Position</td></tr>";
+        echo "<table class='containet striped centered'>";
+        echo "<tr><th>Winning</th><th>Stadium</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['winningtname'] . "</td>";

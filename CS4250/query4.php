@@ -36,8 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT l.leaguename FROM LeagueName l, Confederation c WHERE l.confid = c.confid AND c.confid = 15;");
         $query->execute();
 
-        echo "<table class='container'>";
-        echo "<tr><td>leaguename</td></tr>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>League Name</th></tr>";
       
         for ($i = 0; $row = $query->fetch(); $i++) {
          

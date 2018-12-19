@@ -36,8 +36,8 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT t.firstname, t.lastname, p.healthcertificates FROM Teammates t, Players p WHERE t.natidnum = p.natidnum GROUP BY p.healthcertificates, t.firstname, t.lastname");
         $query->execute();
 
-        echo "<table class='container'>";
-        echo "<tr><td>firstname</td><td>lastname</td><td>healthcertificate</td></tr>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>Firstname</th><th>Lastname</th><th>Health Certificate</th></tr>";
       
         for ($i = 0; $row = $query->fetch(); $i++) {
          
