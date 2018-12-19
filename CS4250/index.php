@@ -16,7 +16,7 @@
 
   <body>
     <h1>
-      Manchester City Statistics
+      Football World Statistics
     </h1>
       <h2>
       Team Members: Andres Perez, Rafael Dorado, Avelardo Valdez
@@ -30,7 +30,7 @@
       </p>
 
 <div>
-  This is where our relations
+  
 <ol>
 <li>
   <?php echo "<a href='Aquire_annstats.php' target='_blank'>Aquire_annstats</a>"; ?>
