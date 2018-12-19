@@ -37,7 +37,7 @@ $server = "hopper.csustan.edu";
         $query->execute();
 
         echo "<table class='container striped centered'>";
-        echo "<tr><th>Years Experience</th><th>Health Certificates</th><th>Position</th><th><NatIdNNum</th></tr>";
+        echo "<tr><th>Years Experience</th><th>Health Certificates</th><th>Position</th><th>National Id Number</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['yearsexperience'] . "</td>";

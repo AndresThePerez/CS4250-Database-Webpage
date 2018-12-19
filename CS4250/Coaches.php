@@ -23,10 +23,11 @@ $server = "hopper.csustan.edu";
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $query = $conn->prepare("SELECT * FROM Coaches");
         $query->execute();
+
+
         echo "<table class='container striped centered'>";
-        echo "<tr><th>Yearsexperience</th><th>Healthcertificates</th><th>Position</th><th>Natidnum</th></tr>";
-        
-        
+        echo "<tr><th>Years Experience</th><th>Health Certificates</th><th>Position</th><th>National Id Number</th></tr>";
+
         for ($i = 0; $row = $query->fetch(); $i++) {
             echo "<tr><td>" . $row['yearsexperience'] . "</td>";
             echo "<td>" . $row['healthcertificates'] . "</td>";
