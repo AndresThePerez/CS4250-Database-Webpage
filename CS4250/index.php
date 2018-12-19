@@ -77,23 +77,26 @@
 <ol>
 <li>
   <?php echo "<a href='query1.php' target='_blank'>Query 1</a>" ?>
-  :Description
+  :This tells us the players, positions and salaries of all the players that 
+  currently have a salary of over a million dollars.
 </li>
 <li>
   <?php echo "<a href='query2.php' target='_blank'>Query 2</a>"; ?>
-  :Description
+  :This Query searches the database for teams that have won at a stadium 
+  that has a name like AT&T.
 </li>
 <li>
   <?php echo "<a href='query3.php' target='_blank'>Query 3</a>"; ?>
-  :Description
+  :This Query searches the database for the average salary of players that are strikers. 
 </li>
 <li>
   <?php echo "<a href='query4.php' target='_blank'>Query 4</a>"; ?>
-  :Description
+  :This query shows all the leagues present in the Confederation of germany.
 </li>
 <li>
   <?php echo "<a href='query5.php' target='_blank'>Query 5</a>"; ?>
-  :Description
+  :This query prints out the first name, lastname, and healthcertificates of players 
+  and groups them.
 </li>
 </ol>
 <hr>
