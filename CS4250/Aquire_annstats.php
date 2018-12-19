@@ -24,7 +24,7 @@ $server = "hopper.csustan.edu";
         $query = $conn->prepare("SELECT * FROM Aquire_annstats");
         $query->execute();
          echo "<table class='container striped centered'>";
-         echo "<tr><th>Natteamid</th><th>Wins</th><th>Losses</th><th>Game_Played</th><th>Year<th></tr>";
+         echo "<tr><th>Natteamid</th><th>Wins</th><th>Losses</th><th>Game_Played</th><th>Year</th></tr>";
          
          
         for ($i = 0; $row = $query->fetch(); $i++) {
