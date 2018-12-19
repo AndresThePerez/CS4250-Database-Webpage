@@ -14,31 +14,20 @@
 
 
 <?php
-
 $username = "aperez";
 $password = "wcz96PPF";
 $database = "aperez";
 $server = "hopper.csustan.edu";
-
-
-
-
-
-
-
     try {
-
-
         $conn = new PDO("mysql:hodst=$server;dbname=$database", $username, $password);
-
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = $conn->prepare("SELECT * FROM Game");
         $query->execute();
+         echo "<table class='container striped centered'>";
+         echo "<tr><th>Nat. Game ID</th><th>Date</th><th>State</th><th>City</th><th>Winning Team Name</th><th>Losing Team Name</th><th>Win Score</th><th>Lose Score</th><th>Penalties</th><th>Assists</th><th>Stadium</th><th>Nat. Tean ID</th><th>Nat, League ID</th></tr>";
 
-         echo "<table class='container'>";
+         
         for ($i = 0; $row = $query->fetch(); $i++) {
-
             echo "<tr><td>" . $row['natgameid'] . "</td>";
             echo "<td>" . $row['date'] . "</td>";
             echo "<td>" . $row['state'] . "</td>";
@@ -52,30 +41,13 @@ $server = "hopper.csustan.edu";
             echo "<td>" . $row['stadium'] . "</td>";
             echo "<td>" . $row['natteamid'] . "</td>";
             echo "<td>" . $row['natleagueid'] . "</td></tr>";
-
-
-
         }
-
         echo "</table>";
-
     }
 catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
     }
-
-
-
-
-
-
-
-
-
     $conn->null;
-
-
-
 ?>
 
 
