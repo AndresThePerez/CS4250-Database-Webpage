@@ -14,31 +14,20 @@
 
 
 <?php
-
 $username = "aperez";
 $password = "wcz96PPF";
 $database = "aperez";
 $server = "hopper.csustan.edu";
-
-
-
-
-
-
-
 	try {
-
-
 		$conn = new PDO("mysql:hodst=$server;dbname=$database", $username, $password);
-
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = $conn->prepare("SELECT * FROM LeagueName");
         $query->execute();
-
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>President</th><th>League Name</th><th>Country</th><th>Wikipedia</th><th>Website</th><th>Facebook</th><th>Twitter</th><th>Confederation ID</th></tr>";
+        
+        
         for ($i = 0; $row = $query->fetch(); $i++) {
-
             echo "<tr><td>" . $row['president'] . "</td>";
             echo "<td>" . $row['leaguename'] . "</td>";
             echo "<td>" . $row['country'] . "</td>";
@@ -47,30 +36,13 @@ $server = "hopper.csustan.edu";
             echo "<td>" . $row['facebook'] . "</td>";
             echo "<td>" . $row['twitter'] . "</td>";
             echo "<td>" . $row['confid'] . "</td></tr>";
-
-
-
         }
-
         echo "</table>";
-
     }
 catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
     }
-
-
-
-
-
-
-
-
-
     $conn->null;
-
-
-
 ?>
 
 
