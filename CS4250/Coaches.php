@@ -14,59 +14,31 @@
 
 
 <?php
-
 $username = "aperez";
 $password = "wcz96PPF";
 $database = "aperez";
 $server = "hopper.csustan.edu";
-
-
-
-
-
-
-
 	try {
-
-
 		$conn = new PDO("mysql:hodst=$server;dbname=$database", $username, $password);
-
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = $conn->prepare("SELECT * FROM Coaches");
         $query->execute();
-
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
+        echo "<tr><th>Yearsexperience</th><th>Healthcertificates</th><th>Position</th><th>Natidnum</th></tr>";
+        
+        
         for ($i = 0; $row = $query->fetch(); $i++) {
-
             echo "<tr><td>" . $row['yearsexperience'] . "</td>";
             echo "<td>" . $row['healthcertificates'] . "</td>";
             echo "<td>" . $row['position'] . "</td>";
             echo "<td>" . $row['natidnum'] . "</td></tr>";
-
-
-
         }
-
         echo "</table>";
-
     }
 catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
     }
-
-
-
-
-
-
-
-
-
     $conn->null;
-
-
-
 ?>
 
 
