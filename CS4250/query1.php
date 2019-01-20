@@ -37,7 +37,7 @@ $server = "hopper.csustan.edu";
         $query->execute();
 
         echo "<table class='container striped centered'>";
-        echo "<tr><th>Firstname</th><th>Salary</th><tdhPosition</th></tr>";
+        echo "<tr><th>Firstname</th><th>Salary</th><td>Position</th></tr>";
         for ($i = 0; $row = $query->fetch(); $i++) {
 
             echo "<tr><td>" . $row['firstname'] . "</td>";

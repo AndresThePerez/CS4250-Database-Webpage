@@ -33,7 +33,7 @@
   
 <ol>
 <li>
-  <?php echo "<a href='Aquire_annstats.php' target='_blank'>Aquire_annstats</a>"; ?>
+  <?php echo "<a href='Acquire_annstats.php' target='_blank'>Acquire_annstats</a>"; ?>
 </li>
 <li>
   <?php echo "<a href='Coaches.php' target='_blank'>Coaches</a>"; ?>

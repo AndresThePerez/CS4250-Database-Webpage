@@ -1,3 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<title>
+</title>
+
+</head>
+
+
 <?php
 
 $username = "aperez";
@@ -14,17 +29,24 @@ $server = "hopper.csustan.edu";
 
 	try {
 
-
-		$conn = new PDO("mysql:host=$server;dbname=$database", $username, $password);
+		$conn = new PDO("mysql:hodst=$server;dbname=$database", $username, $password);
 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $query = $conn->prepare($ad_hoc_query);
-        $query->execute();
-      
+
+        if (stripos($ad_hoc_query, "drop") !== false) {
+            echo "Cannot DROP table! enter a non-malicious query please.";
+        } else {
+            $query->execute();
+        }
+
+
+
+
 
         //Thanks to https://stackoverflow.com/questions/12413064/select-and-display-all-fields-from-mysql-table-for-indefinite-amount-of-columns
         //for the reference
-        echo "<table class='container'>";
+        echo "<table class='container striped centered'>";
 
             while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
@@ -44,8 +66,8 @@ $server = "hopper.csustan.edu";
     catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         }
-    
-    
+
+
 
 
 
@@ -55,3 +77,8 @@ $server = "hopper.csustan.edu";
 
 
 ?>
+</body>
+
+
+
+</html>
